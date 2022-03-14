@@ -1,0 +1,47 @@
+/* nav {
+  float: right;
+  margin: 20px;
+} */
+
+.body {
+  background-color: #f1cb66;
+}
+
+.container {
+  text-align: center;
+}
+
+.col {
+  /* border: solid 2px black; */
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Alata", sans-serif;
+
+  /* font-family: "Josefin Sans", sans-serif; */
+  /* font-family: 'Poppins', sans-serif; */
+}
+
+.mainPageTitle {
+  /* text-align: center; */
+  font-family: "Great Vibes", cursive;
+  letter-spacing: 2px;
+  font-size: 40px;
+}
+
+.mainHeader {
+  /* text-align: center; */
+  font-family: "Great Vibes", cursive;
+  letter-spacing: 2px;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.signUpHeading {
+  font-family: "Alata", sans-serif;
+  margin: 30px;
+  text-align: center;
+}
+
+.signForm {
+  font-family: "Alata", sans-serif;
+}
