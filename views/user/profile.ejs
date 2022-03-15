@@ -1,21 +1,19 @@
-<!-- <h1>Profile route is working!</h1>
+<h2 class="suggestMusic">Music Suggestions</h2>
 
-<form method="post" action="/user/profile">
-  <div>
-    <label>Music Preferences:</label>
-    <input name="musicPreferences" type="text" />
-  </div>
-
-  <div>
-    <label>Year of Birth:</label>
-    <input name="yearOfBirth" type="text" />
-  </div>
-
-  <div>
-    <label>Country of Youth (ages 10 - 18):</label>
-    <input name="countryOfYouth" type="text" />
-  </div>
-
-  <button type="submit">Create Profile</button>
-  </form>
-</form> -->
+<form method="post" action="/user/profile"></form>
+<% playlists.forEach(playlist => { %>
+<div class="playlistItem"><%= playlist.name %></div>
+<img
+  class="playlistItem"
+  id="playlistImg"
+  width="300"
+  height="300"
+  src="<%= playlist.image %>"
+/>
+<button class="playlistItem" id="playlistURL">
+  <a href="<%= playlist.URL %>" target="_blank">Click to Listen</a>
+</button>
+<button class="playlistItem" id="clickToSave"><a></a>
+  Click to Save</a>
+</button>
+<% }) %>

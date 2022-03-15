@@ -1,6 +1,21 @@
 // API to call third party API
 const axios = require("axios").default;
 const baseURL = "https://spotify23.p.rapidapi.com";
+const dotenv = require("dotenv");
+dotenv.config();
+const { Music } = require("../models/Music");
+const mongoose = require("mongoose");
+
+mongoose.connect(
+  process.env.mongoDBURL,
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  },
+  () => {
+    console.log("MongoDB connected successfully!");
+  }
+);
 
 exports.api_music_get = (req, res) => {
   axios({
@@ -17,27 +32,42 @@ exports.api_music_get = (req, res) => {
 };
 
 // var axios = require("axios").default;
-
+// const playlists = "Classical";
+const playlists = "1950s Folk"; //this always stays as 'genres'
 var options = {
   method: "GET",
   url: "https://spotify23.p.rapidapi.com/search/",
   params: {
-    q: "Etta James",
-    type: "playlists",
+    q: playlists,
+    type: "playlists", //change this to playlists or artists to save in database
     offset: "0",
     limit: "10",
     numberOfTopResults: "5",
   },
   headers: {
     "x-rapidapi-host": "spotify23.p.rapidapi.com",
-    "x-rapidapi-key": "b144d81b15msh60fe0177a58a4bap1244ffjsnbc6ee411cd30",
+    "x-rapidapi-key": process.env.spotifyApiKey,
   },
 };
 
 axios
   .request(options)
   .then(function (response) {
-    console.log(response.data);
+    console.log(response.data.playlists.items); //change item after .data based on the type
+    response.data.playlists.items.forEach((item) => {
+      if (item.data.uri.includes("spotify")) {
+        let URLarr = item.data.uri.split(":");
+        let music = new Music({
+          name: item.data.name,
+          playlists: playlists.toUpperCase(),
+          URL: `https://open.spotify.com/playlist/${URLarr[2]}`,
+          image:
+            item.data.images.items[0].sources[0].url ||
+            "https://cdn.shopify.com/s/files/1/2551/1584/products/music_notes-5_1200x1200.jpg?v=1511646993",
+        });
+        music.save();
+      }
+    });
   })
   .catch(function (error) {
     console.error(error);

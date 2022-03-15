@@ -1,47 +1,116 @@
-/* nav {
-  float: right;
-  margin: 20px;
-} */
-
 .body {
   background-color: #f1cb66;
 }
 
 .container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.container-fluid {
   text-align: center;
-}
-
-.col {
-  /* border: solid 2px black; */
-  margin-top: 10px;
-  margin-bottom: 10px;
   font-family: "Alata", sans-serif;
-
-  /* font-family: "Josefin Sans", sans-serif; */
-  /* font-family: 'Poppins', sans-serif; */
 }
 
-.mainPageTitle {
-  /* text-align: center; */
+#mainPageTitle {
   font-family: "Great Vibes", cursive;
   letter-spacing: 2px;
   font-size: 40px;
 }
 
-.mainHeader {
-  /* text-align: center; */
+#mainHeader {
   font-family: "Great Vibes", cursive;
   letter-spacing: 2px;
   font-size: 30px;
   margin-bottom: 20px;
 }
 
+nav {
+  align-items: center;
+}
+
+#appDescription {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row: 4;
+}
+
 .signUpHeading {
+  grid-column-start: 2;
+  grid-column-end: 4;
   font-family: "Alata", sans-serif;
-  margin: 30px;
+  font-size: 20px;
+  margin: 25px;
   text-align: center;
 }
 
-.signForm {
+.signInHeading {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-size: 20px;
+  margin: 25px;
+  text-align: center;
+}
+
+.signUpForm {
+  grid-column-start: 2;
+  grid-column-end: 4;
   font-family: "Alata", sans-serif;
+  text-align: left;
+}
+
+#createProfile {
+  margin: 20px 0px 20px 0px;
+}
+
+.signInForm {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-family: "Alata", sans-serif;
+}
+
+#signInButton {
+  margin: 20px 0px 20px 0px;
+}
+
+.suggestMusic {
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row: 4 / 10;
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+.saveMusic {
+  border: 2px solid black;
+  font-size: 20px;
+}
+
+.playlistItem {
+  display: block;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#playlistImg {
+  display: flex;
+  justify-content: center;
+}
+
+#playlistURL {
+  display: flex;
+  justify-content: center;
+}
+
+#clickToSave {
+  margin-bottom: 50px;
+}
+
+#addNote {
+  margin-bottom: 50px;
 }

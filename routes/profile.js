@@ -1,12 +1,12 @@
-// const express = require("express");
+const express = require("express");
 
-// const router = express.Router();
+const router = express.Router();
 
-// router.use(express.urlencoded({ extended: true }));
+router.use(express.urlencoded({ extended: true }));
 
-// const profileCntrl = require("../controllers/profile");
+const profileCntrl = require("../controllers/profile");
 
-// router.get("/user/profile", profileCntrl.profile_create_get);
-// router.post("/user/profile", profileCntrl.profile_create_post);
+router.get("/user/profile", profileCntrl.profile_create_get);
+router.post("/user/profile", profileCntrl.profile_create_post);
 
-// module.exports = router;
+module.exports = router;

@@ -34,19 +34,24 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function (req, res, next) {
+  console.log(req.user);
+  res.locals.currentUser = req.user;
+  next();
+});
 // Import Routes
 const indexRoute = require("./routes/index");
-// const userRoute = require("./routes/user");
-// const profileRoute = require("./routes/profile");
 const authRoutes = require("./routes/auth");
-const apiRoutes = require("./routes/api");
+const profileRoutes = require("./routes/profile");
+const savedRoutes = require("./routes/saved");
+// const apiRoutes = require("./routes/api");
 
 // Mount Routes
 app.use("/", indexRoute);
-// app.use("/", userRoute);
-// app.use("/", profileRoute);
 app.use("/", authRoutes);
-app.use("/", apiRoutes);
+app.use("/", profileRoutes);
+app.use("/", savedRoutes);
+// app.use("/", apiRoutes);
 app.set("view engine", "ejs");
 
 // Connection with mongoDB

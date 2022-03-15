@@ -22,9 +22,13 @@ const userSchema = mongoose.Schema({
   },
   musicPreferences: {
     type: String,
+    default: "JAZZ",
+    enum: ["JAZZ", "CLASSICAL", "ROCK", "POP"],
   },
   yearOfBirth: {
     type: Number,
+    min: 1900,
+    max: 2022,
   },
   countryOfYouth: {
     type: String,

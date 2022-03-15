@@ -14,17 +14,24 @@ exports.auth_signup_get = (req, res) => {
 // HTTP POST - SIGN UP - to post the data
 
 exports.auth_signup_post = (req, res) => {
-  res.render("auth/signup");
+  // // res.render("auth/signup");
+  // console.log("auth/signup");
   let user = new User(req.body);
   console.log(req.body);
   let hash = bcrypt.hashSync(req.body.password, salt);
   console.log(hash);
   user.password = hash;
-  user.save().then(
-    res.redirect("home/index").catch((err) => {
-      console.log(err);
+  user
+    .save()
+    .then(() => {
+      res.redirect("/auth/signin");
     })
-  );
+    .catch((err) => {
+      if (err.code == 11000) {
+        res.send("Duplicate Email.");
+      }
+      // console.log(err);
+    });
 };
 
 // HTTP GET - Signin - to load the signin form
@@ -42,7 +49,7 @@ exports.auth_signin_get = (req, res) => {
 // http post - SIGNIN - TO POST THE data
 
 exports.auth_signin_post = passport.authenticate("local", {
-  successRedirect: "/",
+  successRedirect: "/user/profile",
   failureRedirect: "/auth/signin",
 });
 
