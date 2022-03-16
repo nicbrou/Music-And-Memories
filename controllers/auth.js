@@ -30,7 +30,7 @@ exports.auth_signup_post = (req, res) => {
       if (err.code == 11000) {
         res.send("Duplicate Email.");
       }
-      // console.log(err);
+      console.log(err);
     });
 };
 
@@ -51,6 +51,14 @@ exports.auth_signin_get = (req, res) => {
 exports.auth_signin_post = passport.authenticate("local", {
   successRedirect: "/user/profile",
   failureRedirect: "/auth/signin",
+  successFlash: "You signed in successfully!",
+  failureFlash: "Invalid username or password!",
 });
 
 // HTTP GET - Logout - to logout the user
+
+exports.auth_logout_get = (req, res) => {
+  req.logout();
+  req.flash("success", "You have logged out.");
+  res.redirect("/auth/signin");
+};

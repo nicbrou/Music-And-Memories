@@ -1,7 +1,15 @@
-// Dependencies
 const mongoose = require("mongoose");
 
 const bcrypt = require("bcrypt");
+
+const noteSchema = new mongoose.Schema(
+  {
+    comment: String,
+  },
+  {
+    timestamps: true,
+  }
+);
 
 const userSchema = mongoose.Schema({
   username: {
@@ -23,7 +31,7 @@ const userSchema = mongoose.Schema({
   musicPreferences: {
     type: String,
     default: "JAZZ",
-    enum: ["JAZZ", "CLASSICAL", "ROCK", "POP"],
+    enum: ["JAZZ", "CLASSICAL", "ROCK", "POP", "COUNTRY", "FOLK"],
   },
   yearOfBirth: {
     type: Number,
@@ -33,6 +41,13 @@ const userSchema = mongoose.Schema({
   countryOfYouth: {
     type: String,
   },
+  favourites: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Music",
+    },
+  ],
+  notes: [noteSchema],
 });
 
 userSchema.methods.verifyPassword = function (password) {

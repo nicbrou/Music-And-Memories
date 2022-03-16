@@ -1,8 +1,8 @@
 // Loading the express module on our server
 const express = require("express");
-
+const flash = require("connect-flash");
 const mongoose = require("mongoose");
-
+const methodOverride = require("method-override");
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -33,12 +33,15 @@ app.use(
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 app.use(function (req, res, next) {
   console.log(req.user);
   res.locals.currentUser = req.user;
+  res.locals.alerts = req.flash();
   next();
 });
+app.use(methodOverride("_method"));
 // Import Routes
 const indexRoute = require("./routes/index");
 const authRoutes = require("./routes/auth");

@@ -18,7 +18,6 @@ exports.profile_create_get = async (req, res) => {
 };
 
 exports.profile_create_post = (req, res) => {
-  //   res.render("user/profile", { newProfile: "Create New Profile" });
   res.render("user/profile");
 };
 

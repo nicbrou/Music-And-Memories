@@ -9,7 +9,7 @@
   >
     <div class="form-group">
       <label>Username:</label>
-      <input name="username" type="text" class="form-control" />
+      <input name="username" type="text" class="form-control" minlength="3" />
     </div>
 
     <div class="form-group">
@@ -19,7 +19,12 @@
 
     <div class="form-group">
       <label>Password:</label>
-      <input name="password" type="password" class="form-control" />
+      <input
+        name="password"
+        type="password"
+        class="form-control"
+        minlength="6"
+      />
     </div>
 
     <h2 class="signInHeading">Complete your Music Profile</h2>
@@ -35,6 +40,8 @@
         <option value="CLASSICAL">CLASSICAL</option>
         <option value="ROCK">ROCK</option>
         <option value="POP">POP</option>
+        <option value="COUNTRY">COUNTRY</option>
+        <option value="FOLK">FOLK</option>
       </select>
     </div>
 

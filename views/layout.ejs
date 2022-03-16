@@ -20,9 +20,16 @@
     />
   </head>
   <body class="body">
+    <nav></nav>
     <br /><br />
     <hr />
     <!-- <div class="container"> -->
+    <% if(alerts.success) { %> <% alerts.success.forEach(function(msg) { %>
+    <div class="alert alert-success"><%= msg %></div>
+    <% }) %> <% } %> <% if(alerts.error) { %> <%
+    alerts.error.forEach(function(msg) { %>
+    <div class="alert alert-danger"><%= msg %></div>
+    <% }) %> <% } %>
     <div class="container-fluid">
       <div class="row">
         <h1 id="mainPageTitle" class="col-6 offset-3">Music and Memories</h1>
@@ -32,7 +39,7 @@
       </div>
     </div>
     <%- body %>
-    <script src="../js/main.js"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
       integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
@@ -43,5 +50,7 @@
       integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
       crossorigin="anonymous"
     ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

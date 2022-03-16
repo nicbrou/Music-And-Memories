@@ -1,5 +1,44 @@
 <div class="container-fluid">
   <div class="row">
-    <h1 class="col-6 offset-3">Welcome to your Saved Music Page!</h1>
+    <h1 class="col-6 offset-3" style="font-size: 20px">
+      Welcome to your Saved Music Page!
+    </h1>
   </div>
 </div>
+
+<% currentUser.favourites.forEach(playlist => { %>
+<div class="playlistItem"><%= playlist.name %></div>
+<img
+  class="playlistItem"
+  id="playlistImg"
+  width="300"
+  height="300"
+  src="<%= playlist.image %>"
+/>
+<a href="<%= playlist.URL %>" target="_blank"
+  ><button class="playlistItem" id="playlistURL">Click to Listen</button></a
+>
+<form
+  method="post"
+  action="/user/saved/delete/<%= playlist.id %>?_method=DELETE"
+>
+  <button type="submit" class="playlistItem" id="savedMusicButton">
+    Delete
+  </button>
+</form>
+<div class="container">
+  <% currentUser.notes.forEach(note => { %> <%= note.comment %> <% }) %>
+  <form
+    method="post"
+    action="/user/saved/add/<%= playlist.id %>"
+    class="addNoteForm"
+  >
+    <label id="noteForm">Create Note: </label>
+    <input type="text" name="comment" class="form-control" id="noteForm" />
+    <button type="submit" id="noteForm" class="btn btn-primary">
+      Save Note
+    </button>
+  </form>
+</div>
+<% }) %>
+<!-- If you want to delete a favourite, you need a form on this page - controller will delete the id of the favourite from the favourites array -->

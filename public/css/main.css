@@ -91,6 +91,7 @@ nav {
 .playlistItem {
   display: block;
   text-align: center;
+  font-family: "Alata", sans-serif;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
@@ -111,6 +112,16 @@ nav {
   margin-bottom: 50px;
 }
 
-#addNote {
-  margin-bottom: 50px;
+.addNoteForm {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  text-align: center;
+  margin: 5px;
+}
+
+#noteForm {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-family: "Alata", sans-serif;
+  margin: 5px;
 }
