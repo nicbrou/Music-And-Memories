@@ -2,8 +2,20 @@ const mongoose = require("mongoose");
 
 const bcrypt = require("bcrypt");
 
-const noteSchema = new mongoose.Schema(
+const favouriteSchema = mongoose.Schema(
   {
+    name: {
+      type: String,
+    },
+    playlists: String,
+    URL: {
+      type: String,
+    },
+    image: {
+      type: String,
+      default:
+        "https://cdn.shopify.com/s/files/1/2551/1584/products/music_notes-5_1200x1200.jpg?v=1511646993",
+    },
     comment: String,
   },
   {
@@ -41,13 +53,7 @@ const userSchema = mongoose.Schema({
   countryOfYouth: {
     type: String,
   },
-  favourites: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Music",
-    },
-  ],
-  notes: [noteSchema],
+  favourites: [favouriteSchema],
 });
 
 userSchema.methods.verifyPassword = function (password) {

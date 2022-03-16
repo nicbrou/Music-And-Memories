@@ -27,7 +27,19 @@
   </button>
 </form>
 <div class="container">
-  <% currentUser.notes.forEach(note => { %> <%= note.comment %> <% }) %>
+  <div>
+    <%= playlist.comment %>
+    <form
+      method="post"
+      action="/user/saved/delete/notes/<%= playlist.id %>?_method=DELETE"
+      class="addNoteForm"
+    >
+      <button type="submit" id="noteForm" class="btn btn-primary">
+        Delete Note
+      </button>
+    </form>
+  </div>
+
   <form
     method="post"
     action="/user/saved/add/<%= playlist.id %>"

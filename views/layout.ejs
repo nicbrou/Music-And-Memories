@@ -20,10 +20,29 @@
     />
   </head>
   <body class="body">
-    <nav></nav>
-    <br /><br />
-    <hr />
-    <!-- <div class="container"> -->
+    <nav id="saveMusicNav">
+      <a href="/user/saved"><button id="navButtons">Saved Playlists</button></a>
+      <a href="/user/profile"
+        ><button id="navButtons">Music Suggestions</button></a
+      >
+      <a href="/auth/signin"><button id="navButtons">Sign In</button></a>
+      <a href="/auth/signup"><button id="navButtons">Sign Up</button></a>
+      <a href="/auth/logout"><button id="navButtons">Logout</button></a>
+
+      <!-- 
+      <% if(currentUser) { %>
+        Hi <%=currentUser.firstName %><%=currentUser.lastName %>
+        <a href="/auth/logout">Logout</a>
+        <% } else { %>
+
+      <a href="/auth/signin">Sign in</a>
+      <a href="/auth/signup">Create new account</a>
+
+      <% } %>
+        </div> -->
+    </nav>
+    <br />
+
     <% if(alerts.success) { %> <% alerts.success.forEach(function(msg) { %>
     <div class="alert alert-success"><%= msg %></div>
     <% }) %> <% } %> <% if(alerts.error) { %> <%

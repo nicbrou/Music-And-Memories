@@ -18,9 +18,8 @@ router.put("/user/saved/:id", savedCntrl.saved_create_put);
 router.delete("/user/saved/delete/:id", savedCntrl.saved_create_delete);
 
 // Add Note to Saved Playlist
-router.get("/user/saved/add/:id", savedCntrl.saved_addNote_get);
 router.post("/user/saved/add/:id", savedCntrl.saved_addNote_post);
 
-// Edit Note to Saved Playlist
+router.delete("/user/saved/delete/notes/:id", savedCntrl.saved_addNote_delete);
 
 module.exports = router;

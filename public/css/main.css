@@ -1,5 +1,6 @@
 .body {
   background-color: #f1cb66;
+  /* background-image: url("/videotutorials/images/tutor_connect_home.jpg"); */
 }
 
 .container {
@@ -28,7 +29,25 @@
 }
 
 nav {
-  align-items: center;
+  text-align: center;
+}
+
+#saveMusicNav {
+  text-align: left;
+  background-color: lightslategray;
+  color: white;
+  padding: 10px;
+  font-family: "Alata", sans-serif;
+}
+
+#navButtons {
+  padding: 5px;
+  margin: 5px;
+  background-color: #8fa06a;
+  color: white;
+  border: 5px solid #45673e;
+  border-style: ridge;
+  text-shadow: 2px 2px #45673e;
 }
 
 #appDescription {
@@ -70,16 +89,24 @@ nav {
   grid-column-end: 4;
   font-family: "Alata", sans-serif;
 }
-
+#signUpButton {
+  background-color: #8fa06a;
+  color: white;
+  border: 5px solid #45673e;
+  border-style: ridge;
+  text-shadow: 2px 2px #45673e;
+}
 #signInButton {
   margin: 20px 0px 20px 0px;
+  background-color: #8fa06a;
+  color: white;
+  border: 5px solid #45673e;
+  border-style: ridge;
+  text-shadow: 2px 2px #45673e;
 }
 
-.suggestMusic {
-  grid-column-start: 3;
-  grid-column-end: 5;
-  grid-row: 4 / 10;
-  border: 2px solid black;
+#suggestMusic {
+  text-align: center;
   font-size: 20px;
 }
 
@@ -96,6 +123,11 @@ nav {
   margin-left: auto;
   margin-top: 10px;
   margin-bottom: 10px;
+  background-color: #8fa06a;
+  color: white;
+  border: 5px solid #45673e;
+  border-style: ridge;
+  text-shadow: 2px 2px #45673e;
 }
 
 #playlistImg {
@@ -106,6 +138,7 @@ nav {
 #playlistURL {
   display: flex;
   justify-content: center;
+  font-family: "Alata", sans-serif;
 }
 
 #clickToSave {

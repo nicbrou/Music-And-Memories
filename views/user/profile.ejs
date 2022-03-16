@@ -1,5 +1,6 @@
-<button><a href="/auth/logout">Logout</a></button>
-<h2 class="suggestMusic">Music Suggestions</h2>
+<div class="container-fluid">
+  <h2 id="suggestMusic">Music Suggestions</h2>
+</div>
 
 <% playlists.forEach(playlist => { %>
 <div class="playlistItem"><%= playlist.name %></div>
@@ -10,9 +11,9 @@
   height="300"
   src="<%= playlist.image %>"
 />
-<button class="playlistItem" id="playlistURL">
-  <a href="<%= playlist.URL %>" target="_blank">Click to Listen</a>
-</button>
+<a href="<%= playlist.URL %>" target="_blank"
+  ><button class="playlistItem" id="playlistURL">Click to Listen</button></a
+>
 <form method="post" action="/user/saved/<%= playlist.id %>?_method=PUT">
   <button class="playlistItem" id="clickToSave" type="submit">
     Click to Save
