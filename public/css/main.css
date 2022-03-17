@@ -84,6 +84,11 @@ nav {
 
 #createProfile {
   margin: 20px 0px 20px 0px;
+  background-color: #8fa06a;
+  color: white;
+  border: 5px solid #45673e;
+  border-style: ridge;
+  text-shadow: 2px 2px #45673e;
 }
 
 .signInForm {
@@ -148,6 +153,8 @@ nav {
 }
 
 #playlistNotes {
+  grid-column-start: 2;
+  grid-column-end: 4;
   text-align: center;
 }
 
@@ -155,7 +162,7 @@ nav {
   grid-column-start: 2;
   grid-column-end: 4;
   text-align: center;
-  margin: 5px;
+  margin: 10px;
 }
 
 #noteForm {
@@ -163,9 +170,27 @@ nav {
   grid-column-end: 4;
   font-family: "Alata", sans-serif;
   margin: 5px;
+  background-color: lightslategray;
+  color: white;
+  border: 5px solid darkslategray;
+  border-style: ridge;
+  text-shadow: 2px 2px darkslategray;
 }
 
 #deleteNote {
   font-family: "Alata", sans-serif;
-  margin: 5px;
+  background-color: lightslategray;
+  color: white;
+  border: 5px solid darkslategray;
+  border-style: ridge;
+  text-shadow: 2px 2px darkslategray;
+}
+
+#saveNotes {
+  background-color: lightslategray;
+  color: white;
+  border: 5px solid darkslategray;
+  border-style: ridge;
+  text-shadow: 2px 2px darkslategray;
+  margin-top: 5px;
 }
