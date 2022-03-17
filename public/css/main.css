@@ -1,4 +1,8 @@
 #homePageImg {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/9571524f-d3e9-461e-9bf5-371e4ca00656/dbac2de-ccd8837e-4280-46fe-9d34-55be1b06e289.png");
+  height: 100vh;
+  background-repeat: repeat;
+  background-position: center;
 }
 
 .body {
@@ -20,18 +24,22 @@
 #mainPageTitle {
   font-family: "Great Vibes", cursive;
   letter-spacing: 2px;
-  font-size: 40px;
+  font-size: 60px;
 }
 
 #mainHeader {
   font-family: "Great Vibes", cursive;
   letter-spacing: 2px;
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 20px;
 }
 
 nav {
   text-align: center;
+}
+
+#titleBorder {
+  text-shadow: 1px 1px white;
 }
 
 #saveMusicNav {
@@ -56,15 +64,8 @@ nav {
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row: 4;
-}
-
-.signUpHeading {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  font-family: "Alata", sans-serif;
-  font-size: 20px;
-  margin: 25px;
-  text-align: center;
+  background-color: #f1cb66;
+  padding: 10px;
 }
 
 .signInHeading {
@@ -75,11 +76,46 @@ nav {
   text-align: center;
 }
 
+.signInForm {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-family: "Alata", sans-serif;
+  background-color: #f1cb66;
+  padding: 10px;
+  border: 5px solid #c6aba9;
+  border-style: ridge;
+  text-shadow: 1px 1px white;
+}
+
+#signInButton {
+  margin: 10px;
+  background-color: #8fa06a;
+  color: white;
+  border: 5px solid #45673e;
+  border-style: ridge;
+  text-shadow: 2px 2px #45673e;
+}
+
 .signUpForm {
   grid-column-start: 2;
   grid-column-end: 4;
   font-family: "Alata", sans-serif;
   text-align: left;
+  background-color: #f1cb66;
+  padding: 10px;
+  border: 5px solid #c6aba9;
+  border-style: ridge;
+  text-shadow: 1px 1px white;
+}
+
+.signUpHeading {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-family: "Alata", sans-serif;
+  font-size: 20px;
+  text-align: center;
+  background-color: #f1cb66;
+  padding: 0px 0px 10px 0px;
 }
 
 #createProfile {
@@ -91,25 +127,13 @@ nav {
   text-shadow: 2px 2px #45673e;
 }
 
-.signInForm {
-  grid-column-start: 2;
-  grid-column-end: 4;
-  font-family: "Alata", sans-serif;
-}
 #signUpButton {
   background-color: #8fa06a;
   color: white;
   border: 5px solid #45673e;
-  border-style: ridge;
+  border-style: groove;
   text-shadow: 2px 2px #45673e;
-}
-#signInButton {
-  margin: 20px 0px 20px 0px;
-  background-color: #8fa06a;
-  color: white;
-  border: 5px solid #45673e;
-  border-style: ridge;
-  text-shadow: 2px 2px #45673e;
+  margin: 10px;
 }
 
 #suggestMusic {
