@@ -55,5 +55,5 @@ Only if a user has an account and they are logged in, can they access the music 
 
 - Allow one user to have many different profiles
 - Allow users to set their 'Saved Music Pages' to private or public
-- Allow users to
+- Allow users to create more than one note per playlist
 - Allow users to browse other users profiles
