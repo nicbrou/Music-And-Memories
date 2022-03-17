@@ -12,9 +12,9 @@ The user is then able to save playlists onto their "Saved Music" page. Once a pl
 
 ## Data Entities
 
-The main functional idea of the app is that each unique user has a 1:M relationship with their suggested playlists based on what they input when they create their account.
+The main functional idea of the app is that each unique user has a M:M relationship with their suggested playlists based on what they input when they create their account.
 
-The second data entity is the 1:M embedded relationship each
+The second data entity is the 1:M relationship between the user's suggested music and the playlists they choose as their favourites. The favourites are then saved on the user's 'Saved Music' page which is unique to each user. The user's favourites is a schema that is embedded within the user schema.
 
 ## Special Conditions
 
@@ -22,8 +22,38 @@ Only if a user has an account and they are logged in, can they access the music 
 
 ## Screenshots
 
+- The home page - A description of the app is displayed as well as a navigation bar with options to sign up or sign in. Only users with an account can access the "Saved Music" and "Music Suggestions" pages located in the nav bar.
+  ![Home Page](img/HomePage.png)
+
+- Once the user clicks the "create new account" button they are redirected to the page below:
+  !["Create New Account"](img/CreateNewAccountForm.png)
+
+- The user then inputs all the necessary information regarding the senior they are spending time with or working with:
+  ![User inputs information into the fields](img/CreateNewAccountWithInput.png)
+
+- The user is redirected to the "Music Suggestions" page. The app uses the Spotify API to generate playlists based upon what the user input for the senior's music preferences and decade they were born in. ![Music Suggestions Page](img/MusicSuggestions.png)
+
+- The user can then click the 'click to save' button in order to save specific playlists to their "Saved Music Page." The user will immediately be redirected to the "Saved Music Page" once they click the 'click to save' button. However, they can return to the Music Suggestions page by clicking the "Music Suggestions" button in the nav bar. ![Saved Music Page](img/SavedMusicPage.png)
+
+- The user can add a note to each playlist by clicking "create note" and adding input into the field.
+  ![User Creates Note and it displays on the page](img/SavedMusicPageWithNote.png)
+
+- The user can delete their note from each playlist by clicking "delete note" and it will disappear from the screen.
+  ![User Creates Note and it displays on the page](img/SavedMusicPageNoteDeleted.png)
+
+- The user can delete the entire playlist from their "Saved Music" page by clicking the "delete" button situated underneath the playlists and it will disappear from the screen.
+  ![User Creates Note and it displays on the page](img/SavedMusicPageNoteDeleted.png)
+
 ## Technologies Used
 
-## Play the Game
+- Spotify API
+- Node.js
+- Express
+- MongoDB
 
 ## Future Work
+
+- Allow one user to have many different profiles
+- Allow users to set their 'Saved Music Pages' to private or public
+- Allow users to
+- Allow users to browse other users profiles
