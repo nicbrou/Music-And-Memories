@@ -1,11 +1,13 @@
+#homePageImg {
+}
+
 .body {
   background-color: #f1cb66;
-  /* background-image: url("/videotutorials/images/tutor_connect_home.jpg"); */
 }
 
 .container {
   display: grid;
-  height: 100vh;
+  height: 50vh;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 0.5fr 0.5fr 0.5fr 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
@@ -145,6 +147,10 @@ nav {
   margin-bottom: 50px;
 }
 
+#playlistNotes {
+  text-align: center;
+}
+
 .addNoteForm {
   grid-column-start: 2;
   grid-column-end: 4;
@@ -155,6 +161,11 @@ nav {
 #noteForm {
   grid-column-start: 2;
   grid-column-end: 4;
+  font-family: "Alata", sans-serif;
+  margin: 5px;
+}
+
+#deleteNote {
   font-family: "Alata", sans-serif;
   margin: 5px;
 }
