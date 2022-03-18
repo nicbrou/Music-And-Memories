@@ -54,10 +54,8 @@ app.use("/", indexRoute);
 app.use("/", authRoutes);
 app.use("/", profileRoutes);
 app.use("/", savedRoutes);
-// app.use("/", apiRoutes);
 app.set("view engine", "ejs");
 
-// Connection with mongoDB
 mongoose.connect(
   process.env.mongoDBURL,
   {

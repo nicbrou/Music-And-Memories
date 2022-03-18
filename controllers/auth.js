@@ -1,7 +1,5 @@
 // APIs for Authentication
-
 // HTTP GET - TO LOAD THE SIGN UP FORM
-
 const { User } = require("../models/User");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
@@ -12,10 +10,7 @@ exports.auth_signup_get = (req, res) => {
 };
 
 // HTTP POST - SIGN UP - to post the data
-
 exports.auth_signup_post = (req, res) => {
-  // // res.render("auth/signup");
-  // console.log("auth/signup");
   let user = new User(req.body);
   console.log(req.body);
   let hash = bcrypt.hashSync(req.body.password, salt);
@@ -35,19 +30,11 @@ exports.auth_signup_post = (req, res) => {
 };
 
 // HTTP GET - Signin - to load the signin form
-// When it's 'render' you do not need the first slash
 exports.auth_signin_get = (req, res) => {
   res.render("auth/signin");
-  // let user = new User(req.body);
-  // user.save().then(
-  //   res.redirect("home/index").catch((err) => {
-  //     console.log(err);
-  //   })
-  // );
 };
 
 // http post - SIGNIN - TO POST THE data
-
 exports.auth_signin_post = passport.authenticate("local", {
   successRedirect: "/user/profile",
   failureRedirect: "/auth/signin",
@@ -56,7 +43,6 @@ exports.auth_signin_post = passport.authenticate("local", {
 });
 
 // HTTP GET - Logout - to logout the user
-
 exports.auth_logout_get = (req, res) => {
   req.logout();
   req.flash("success", "You have logged out.");

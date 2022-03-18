@@ -6,16 +6,10 @@ dotenv.config();
 const { Music } = require("../models/Music");
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  process.env.mongoDBURL,
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  },
-  () => {
-    console.log("MongoDB connected successfully!");
-  }
-);
+mongoose.connect(process.env.mongoDBURL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 exports.api_music_get = (req, res) => {
   axios({
@@ -31,9 +25,7 @@ exports.api_music_get = (req, res) => {
     });
 };
 
-// var axios = require("axios").default;
-// const playlists = "Classical";
-const playlists = "1950s Folk"; //this always stays as 'genres'
+const playlists = "1950s Folk";
 var options = {
   method: "GET",
   url: "https://spotify23.p.rapidapi.com/search/",
@@ -53,7 +45,7 @@ var options = {
 axios
   .request(options)
   .then(function (response) {
-    console.log(response.data.playlists.items); //change item after .data based on the type
+    console.log(response.data.playlists.items);
     response.data.playlists.items.forEach((item) => {
       if (item.data.uri.includes("spotify")) {
         let URLarr = item.data.uri.split(":");

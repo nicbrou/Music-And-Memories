@@ -5,14 +5,11 @@ const LocalStrategy = require("passport-local").Strategy;
 const { User } = require("../models/User");
 
 // serialize User
-// Saing the data to the session
-// Id is the unique identifier
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
 // Deserialize User
-// Reading the info from the database according to the user id
 passport.deserializeUser(function (id, done) {
   User.findById(id, function (err, user) {
     done(err, user);
