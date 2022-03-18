@@ -57,3 +57,7 @@ Only if a user has an account and they are logged in, can they access the music 
 - Allow users to set their 'Saved Music Pages' to private or public
 - Allow users to create more than one note per playlist
 - Allow users to browse other users profiles
+
+## Experience the app!
+
+Click the following link to use the "Music and Memories" app: https://music-and-memories-sei48.herokuapp.com/
